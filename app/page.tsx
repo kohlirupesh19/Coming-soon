@@ -1,3 +1,4 @@
+import AlgorithmPlayground from "@/components/AlgorithmPlayground";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
@@ -14,6 +15,7 @@ export default function HomePage() {
       <main className="relative overflow-x-clip">
         <Hero />
         <Services />
+        <AlgorithmPlayground />
         <Process />
         <TechStack />
         <Vision />
