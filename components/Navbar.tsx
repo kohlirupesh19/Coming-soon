@@ -9,7 +9,7 @@ import Container from "@/components/ui/Container";
 import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
-  { href: "/", label: "Home" },
+  { href: "/#home", label: "Home" },
   { href: "/services", label: "Services" },
   { href: "/#technology", label: "Technology" },
   { href: "/#vision", label: "Vision" },
@@ -37,8 +37,8 @@ export default function Navbar() {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 border-b border-white/10 backdrop-blur-xl transition-colors duration-300",
-        scrolled ? "bg-background/80" : "bg-background/45"
+        "fixed inset-x-0 top-0 z-50 border-b border-white/10 transition-colors duration-300",
+        scrolled ? "bg-black/75 backdrop-blur-xl" : "bg-black/35"
       )}
     >
       <Container className="flex h-20 items-center justify-between">
@@ -59,7 +59,7 @@ export default function Navbar() {
 
         <button
           type="button"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/15 text-text md:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 text-text md:hidden"
           aria-label={menuOpen ? "Close menu" : "Open menu"}
           aria-expanded={menuOpen}
           aria-controls="mobile-nav"
@@ -75,7 +75,7 @@ export default function Navbar() {
             <motion.button
               type="button"
               aria-label="Close navigation panel"
-              className="fixed inset-0 z-40 bg-black/55 md:hidden"
+              className="fixed inset-0 z-40 bg-black/70 md:hidden"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -84,7 +84,7 @@ export default function Navbar() {
             <motion.nav
               id="mobile-nav"
               aria-label="Mobile"
-              className="fixed right-0 top-0 z-50 flex h-screen w-[82%] max-w-sm flex-col gap-6 border-l border-white/10 bg-[#121212] p-8 md:hidden"
+              className="fixed right-0 top-0 z-50 flex h-screen w-[82%] max-w-sm flex-col gap-6 border-l border-white/12 bg-black p-8 md:hidden"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
@@ -94,7 +94,7 @@ export default function Navbar() {
                 <span className="text-lg font-semibold">Akruit Labs</span>
                 <button
                   type="button"
-                  className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-white/15"
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/20"
                   aria-label="Close menu"
                   onClick={() => setMenuOpen(false)}
                 >

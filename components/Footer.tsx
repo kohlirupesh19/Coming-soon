@@ -3,7 +3,7 @@ import Link from "next/link";
 import Container from "@/components/ui/Container";
 
 const footerNav = [
-  { href: "/", label: "Home" },
+  { href: "/#home", label: "Home" },
   { href: "/services", label: "Services" },
   { href: "/#technology", label: "Technology" },
   { href: "/#vision", label: "Vision" },
@@ -18,7 +18,7 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 py-10" aria-label="Footer">
+    <footer className="section-divider py-10" aria-label="Footer">
       <Container>
         <div className="flex flex-col justify-between gap-8 md:flex-row md:items-center">
           <div>
@@ -44,7 +44,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label={item.label}
-                  className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-white/15 text-text-muted transition-colors hover:border-accent-start/50 hover:text-text"
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-text-muted transition-colors hover:border-white/45 hover:text-text"
                 >
                   <Icon size={16} aria-hidden="true" />
                 </Link>

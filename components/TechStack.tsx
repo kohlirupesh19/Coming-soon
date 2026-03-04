@@ -6,7 +6,6 @@ import {
   Cloud,
   Code2,
   Container,
-  Cpu,
   FileCode2,
   GitBranch,
   Layers,
@@ -67,7 +66,7 @@ const cardVariants = {
 
 export default function TechStack() {
   return (
-    <section id="technology" className="py-24 md:py-28" aria-labelledby="technology-heading">
+    <section id="technology" className="section-divider py-24 md:py-28" aria-labelledby="technology-heading">
       <ContentContainer>
         <div className="mx-auto max-w-3xl text-center">
           <h2 id="technology-heading" className="text-3xl font-semibold tracking-tight md:text-4xl">
@@ -87,8 +86,9 @@ export default function TechStack() {
               viewport={{ once: true, amount: 0.2 }}
               variants={cardVariants}
               transition={{ duration: 0.5, delay: index * 0.07 }}
+              whileHover={{ y: -6, rotate: 0.25 }}
             >
-              <Card className="h-full">
+              <Card className="h-full border border-white/12 bg-black/35">
                 <h3 className="text-xl font-medium">{group.group}</h3>
                 <ul className="mt-5 grid grid-cols-2 gap-3" aria-label={`${group.group} technologies`}>
                   {group.items.map((item) => {

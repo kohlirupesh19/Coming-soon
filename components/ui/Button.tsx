@@ -16,14 +16,14 @@ export function buttonStyles({
   className
 }: ButtonStyleProps): string {
   const base =
-    "inline-flex items-center justify-center rounded-xl font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-start/80 focus-visible:ring-offset-2 focus-visible:ring-offset-background";
+    "inline-flex items-center justify-center rounded-full font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-background";
 
   const variantClasses: Record<ButtonVariant, string> = {
     primary:
-      "bg-accent-gradient text-black shadow-[0_0_0_rgba(168,224,99,0)] hover:shadow-glow hover:-translate-y-0.5",
+      "bg-accent-gradient text-black shadow-[0_0_0_rgba(255,255,255,0)] hover:-translate-y-0.5 hover:shadow-glow",
     secondary:
-      "border border-white/20 bg-surface/70 text-text hover:border-accent-start/70 hover:-translate-y-0.5",
-    ghost: "text-text hover:bg-white/8"
+      "border border-white/25 bg-white/[0.04] text-text hover:-translate-y-0.5 hover:border-white/45",
+    ghost: "text-text hover:bg-white/[0.08]"
   };
 
   const sizeClasses: Record<ButtonSize, string> = {
@@ -41,14 +41,7 @@ export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = "primary", size = "md", type = "button", ...props }, ref) => {
-    return (
-      <button
-        ref={ref}
-        type={type}
-        className={buttonStyles({ variant, size, className })}
-        {...props}
-      />
-    );
+    return <button ref={ref} type={type} className={buttonStyles({ variant, size, className })} {...props} />;
   }
 );
 

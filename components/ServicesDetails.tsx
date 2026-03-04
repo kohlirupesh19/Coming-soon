@@ -68,7 +68,7 @@ export default function ServicesDetails() {
             const Icon = service.icon;
             return (
               <motion.article key={service.slug} id={service.slug} variants={cardVariants} className="scroll-mt-28">
-                <Card className="h-full">
+                <Card className="h-full border border-white/12 bg-black/35">
                   <div className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/20 bg-white/5 text-accent-start">
                     <Icon size={22} aria-hidden="true" />
                   </div>
@@ -114,7 +114,7 @@ export default function ServicesDetails() {
           transition={{ duration: 0.45 }}
           className="mt-12"
         >
-          <Card className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
+          <Card className="flex flex-col items-start justify-between gap-4 border border-white/12 bg-black/35 md:flex-row md:items-center">
             <div>
               <h2 className="text-2xl font-semibold tracking-tight">Need a custom engagement model?</h2>
               <p className="mt-2 text-sm text-text-muted">

@@ -14,7 +14,7 @@ const visionPoints = [
 
 export default function Vision() {
   return (
-    <section id="vision" className="border-y border-white/10 bg-surface/45 py-24 md:py-28" aria-labelledby="vision-heading">
+    <section id="vision" className="section-divider bg-surface/45 py-24 md:py-28" aria-labelledby="vision-heading">
       <Container>
         <div className="grid items-center gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
           <motion.div
@@ -46,7 +46,7 @@ export default function Vision() {
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6, delay: 0.12 }}
           >
-            <Card className="relative overflow-hidden p-0">
+            <Card className="relative overflow-hidden border border-white/12 bg-black/35 p-0">
               <Image
                 src="/vision-grid.svg"
                 alt="Abstract technical grid visualization"

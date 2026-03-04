@@ -109,7 +109,7 @@ export default function ContactForm() {
   };
 
   return (
-    <section id="contact" className="py-24 md:py-28" aria-labelledby="contact-heading">
+    <section id="contact" className="section-divider py-24 md:py-28" aria-labelledby="contact-heading">
       <Container>
         <div className="mx-auto max-w-2xl text-center">
           <h2 id="contact-heading" className="text-3xl font-semibold tracking-tight md:text-4xl">
@@ -121,7 +121,7 @@ export default function ContactForm() {
         </div>
 
         <form
-          className="glass-panel mx-auto mt-12 max-w-3xl rounded-2xl p-6 md:p-8"
+          className="glass-panel mx-auto mt-12 max-w-3xl rounded-2xl border border-white/12 p-6 md:p-8"
           noValidate
           onSubmit={handleSubmit}
           aria-describedby={hasErrors ? "form-errors" : undefined}
@@ -252,10 +252,7 @@ export default function ContactForm() {
           )}
 
           {success && (
-            <p
-              className="mt-4 inline-flex items-center gap-2 rounded-lg border border-emerald-300/45 bg-emerald-500/10 px-3 py-2 text-sm text-emerald-200"
-              role="status"
-            >
+            <p className="mt-4 inline-flex items-center gap-2 rounded-lg border border-white/22 bg-white/[0.07] px-3 py-2 text-sm text-white" role="status">
               <CheckCircle2 size={16} aria-hidden="true" />
               {success}
             </p>

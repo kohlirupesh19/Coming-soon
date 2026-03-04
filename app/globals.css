@@ -2,44 +2,78 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  color-scheme: dark;
-}
+@layer base {
+  :root {
+    color-scheme: dark;
+    --background: 222 34% 4%;
+    --foreground: 210 42% 95%;
+    --surface: 222 26% 8%;
+    --text: 210 42% 95%;
+    --text-muted: 216 18% 72%;
+    --card: 222 24% 9%;
+    --card-foreground: 210 42% 95%;
+    --popover: 222 24% 9%;
+    --popover-foreground: 210 42% 95%;
+    --primary: 206 70% 82%;
+    --primary-foreground: 222 34% 4%;
+    --secondary: 221 18% 15%;
+    --secondary-foreground: 210 42% 95%;
+    --muted: 221 18% 15%;
+    --muted-foreground: 214 16% 72%;
+    --accent: 206 70% 82%;
+    --accent-foreground: 222 34% 4%;
+    --accent-start: 208 70% 80%;
+    --accent-end: 212 58% 63%;
+    --destructive: 0 80% 56%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 216 18% 20%;
+    --input: 222 22% 13%;
+    --ring: 210 58% 65%;
+    --chart-1: 208 70% 80%;
+    --chart-2: 212 58% 63%;
+    --chart-3: 218 35% 64%;
+    --chart-4: 214 29% 50%;
+    --chart-5: 218 26% 38%;
+    --radius: 1rem;
+  }
 
-* {
-  box-sizing: border-box;
-}
+  * {
+    box-sizing: border-box;
+  }
 
-html,
-body {
-  width: 100%;
-}
+  html,
+  body {
+    width: 100%;
+  }
 
-body {
-  margin: 0;
-  min-height: 100vh;
-  background-color: #0f0f0f;
-  background-image:
-    radial-gradient(circle at 10% 10%, rgba(168, 224, 99, 0.13), transparent 30%),
-    radial-gradient(circle at 90% 0%, rgba(86, 171, 47, 0.1), transparent 28%);
-  font-family: var(--font-inter), sans-serif;
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: hsl(var(--background));
+    background-image:
+      radial-gradient(circle at 14% 12%, rgba(83, 130, 199, 0.12), transparent 33%),
+      radial-gradient(circle at 84% 4%, rgba(76, 142, 214, 0.08), transparent 30%),
+      linear-gradient(165deg, rgba(5, 12, 28, 0.65), rgba(2, 6, 15, 0.95) 48%, rgba(1, 4, 10, 1));
+    font-family: var(--font-inter), sans-serif;
+    color: hsl(var(--text));
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 }
 
 ::selection {
-  background: rgba(168, 224, 99, 0.35);
-  color: #f5f5f5;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
+  background: rgba(106, 162, 226, 0.3);
+  color: #f4faff;
 }
 
 .glass-panel {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(140deg, rgba(56, 88, 130, 0.1), rgba(27, 46, 74, 0.1) 36%, rgba(8, 14, 26, 0.3));
+  border: 1px solid rgba(129, 159, 201, 0.2);
   backdrop-filter: blur(14px);
-  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.36);
+  box-shadow: 0 22px 54px rgba(0, 0, 0, 0.48);
 }
 
 .nav-link {
@@ -54,7 +88,7 @@ a {
   bottom: -0.2rem;
   height: 1px;
   width: 100%;
-  background: linear-gradient(45deg, #a8e063, #56ab2f);
+  background: linear-gradient(45deg, hsl(var(--accent-start)), hsl(var(--accent-end)));
   transform: scaleX(0);
   transform-origin: right;
   transition: transform 220ms ease;
@@ -67,30 +101,43 @@ a {
 }
 
 .text-gradient {
-  background: linear-gradient(45deg, #a8e063, #56ab2f);
+  background: linear-gradient(45deg, hsl(var(--accent-start)), hsl(var(--accent-end)));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
+.section-divider {
+  border-top: 1px solid rgba(124, 156, 196, 0.16);
+}
+
+.noise-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle at 1px 1px, rgba(123, 164, 214, 0.08) 1px, transparent 0);
+  background-size: 3px 3px;
+  opacity: 0.13;
+}
+
 .input-base {
   width: 100%;
   border-radius: 0.9rem;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  background: rgba(24, 24, 24, 0.86);
-  color: #e5e5e5;
+  border: 1px solid rgba(126, 157, 199, 0.23);
+  background: rgba(5, 12, 23, 0.82);
+  color: hsl(var(--text));
   padding: 0.9rem 1rem;
   outline: none;
   transition: border-color 200ms ease, box-shadow 200ms ease;
 }
 
 .input-base::placeholder {
-  color: #9ca3af;
+  color: hsl(var(--text-muted));
 }
 
 .input-base:focus {
-  border-color: rgba(168, 224, 99, 0.72);
-  box-shadow: 0 0 0 3px rgba(168, 224, 99, 0.2);
+  border-color: rgba(117, 166, 226, 0.78);
+  box-shadow: 0 0 0 3px rgba(89, 145, 214, 0.2);
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -47,7 +47,7 @@ const itemVariants = {
 
 export default function Process() {
   return (
-    <section className="border-y border-white/10 bg-surface/45 py-24 md:py-28" aria-labelledby="process-heading">
+    <section className="section-divider bg-surface/45 py-24 md:py-28" aria-labelledby="process-heading">
       <Container>
         <div className="mx-auto max-w-3xl text-center">
           <h2 id="process-heading" className="text-3xl font-semibold tracking-tight md:text-4xl">
@@ -70,8 +70,14 @@ export default function Process() {
             {steps.map((step) => {
               const Icon = step.icon;
               return (
-                <motion.li key={step.title} variants={itemVariants} className="relative">
-                  <Card className="h-full">
+                <motion.li
+                  key={step.title}
+                  variants={itemVariants}
+                  className="relative"
+                  whileHover={{ y: -6, scale: 1.02 }}
+                  transition={{ type: "spring", stiffness: 250, damping: 22 }}
+                >
+                  <Card className="h-full border border-white/12 bg-black/35">
                     <div className="mb-4 flex items-center justify-between">
                       <span className="text-xs font-semibold tracking-[0.2em] text-accent-start/85">{step.number}</span>
                       <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/20 bg-white/5 text-accent-start">
